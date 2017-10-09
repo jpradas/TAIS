@@ -17,7 +17,7 @@ bool resuelveCaso() {
 	PriorityQueue<long long> monticulo;	//monticulo donde vamos guardando los numeros d seguidores
 
 	cin >> N;
-	if (!cin) {
+	if (N==0) {
 		return false;
 	}
 
@@ -46,16 +46,16 @@ bool resuelveCaso() {
 int main() {
 
 	// ajustes para que cin extraiga directamente de un fichero
-	#ifndef DOMJUDGE
-		std::ifstream in("casos.txt");
-		auto cinbuf = std::cin.rdbuf(in.rdbuf());
-	#endif
+#ifndef DOMJUDGE
+	std::ifstream in("casos.txt");
+	auto cinbuf = std::cin.rdbuf(in.rdbuf());
+#endif
 
 	while (resuelveCaso());
 
 	// para dejar todo como estaba al principio
-	#ifndef DOMJUDGE
-		std::cin.rdbuf(cinbuf);
-		system("PAUSE");
-	#endif
+#ifndef DOMJUDGE
+	std::cin.rdbuf(cinbuf);
+	system("PAUSE");
+#endif
 }
